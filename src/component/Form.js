@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Form = () => {
+const Form = (props) => {
   const [formDetails, setFormDetails] = useState('');
 
   const onChangeHandler = (event) => {
@@ -9,8 +9,9 @@ const Form = () => {
 
   const onSubmittingForm = (event) => {
     event.preventDefault();
-    console.log(formDetails);
     setFormDetails('');
+    console.log(formDetails);
+    props.onAddItem(formDetails);
   };
 
   return (
@@ -27,7 +28,8 @@ const Form = () => {
           />
         </div>
       </form>
-      <button onSubmit={onSubmittingForm}>Enter</button>
+
+      <button onClick={onSubmittingForm}>Enter</button>
     </div>
   );
 };

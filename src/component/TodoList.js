@@ -1,7 +1,13 @@
-const TodoList = () => {
+import React, { useState } from 'react';
+
+const TodoList = (props) => {
   return (
     <div>
-      <p>Lists coming</p>
+      <ul className="array-List">
+        {props.onListItem.map((list) => (
+          <li>{list}</li>
+        ))}
+      </ul>
     </div>
   );
 };
