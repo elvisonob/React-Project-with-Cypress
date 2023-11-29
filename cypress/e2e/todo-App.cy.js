@@ -8,7 +8,7 @@ describe('toDo-App', () => {
     cy.get('button').click();
     cy.get('#list').should('be.empty');
     cy.get('array-List').should('not.empty');
-    // cy.get('delete-button').click();
-    // cy.get('array-list').should('not.have.length', 1);
+    cy.get('delete-button').click();
+    cy.get('array-list').should('not.have.length', 1);
   });
 });

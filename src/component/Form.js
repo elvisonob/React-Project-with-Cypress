@@ -16,7 +16,7 @@ const Form = (props) => {
 
   return (
     <div>
-      <form onSubmit={onSubmittingForm}>
+      <form>
         <div className="input-form">
           <label htmlFor="name">Add your To Do List</label>
           <br />

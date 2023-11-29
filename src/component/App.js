@@ -6,8 +6,8 @@ const App = () => {
   const [listItem, setListItem] = useState([]);
 
   const newArrayList = (item) => {
-    setListItem((prevExpenses) => {
-      return [item, ...prevExpenses];
+    setListItem((prevList) => {
+      return [{ id: Math.random(), item: item }, ...prevList];
     });
   };
   return (
