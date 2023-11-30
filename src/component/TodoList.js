@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 
 const TodoList = (props) => {
-  const onRemoveToDo = (product) => {
-    props.onListItem.filter((list) => list.id !== product.id);
-  };
+  const { onRemove } = props;
   return (
     <div>
       <ul className="array-List">
         {props.onListItem.map((list) => (
-          <li key={list.id} onClick={onRemoveToDo.bind(id)}>
+          <li className="list-item" key={list.id}>
             {list.item}
+            <button
+              className="delete-button"
+              onClick={onRemove.bind(null, list.id)}
+            >
+              Remove
+            </button>
           </li>
         ))}
       </ul>

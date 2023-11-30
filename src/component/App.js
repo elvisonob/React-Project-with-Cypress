@@ -5,6 +5,10 @@ import TodoList from './TodoList.js';
 const App = () => {
   const [listItem, setListItem] = useState([]);
 
+  const onRemoveListItem = (item) => {
+    setListItem(listItem.filter((list) => list.id !== item));
+  };
+
   const newArrayList = (item) => {
     setListItem((prevList) => {
       return [{ id: Math.random(), item: item }, ...prevList];
@@ -13,7 +17,7 @@ const App = () => {
   return (
     <Fragment>
       <Form onAddItem={newArrayList} />
-      <TodoList onListItem={listItem} />
+      <TodoList onListItem={listItem} onRemove={onRemoveListItem} />
     </Fragment>
   );
 };

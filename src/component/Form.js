@@ -9,9 +9,9 @@ const Form = (props) => {
 
   const onSubmittingForm = (event) => {
     event.preventDefault();
-    setFormDetails('');
-    console.log(formDetails);
+
     props.onAddItem(formDetails);
+    setFormDetails('');
   };
 
   return (
